@@ -1,0 +1,6 @@
+#sed -i '.backup' '/abstract = /d; /url = /d; /issn = /d; /doi = /d; /file = /d; /keywords = /d; /urldate = /d; /copyright = /d; /language = /d' datajoint.bib 
+pdflatex -shell-escape main.tex
+bibtex main
+pdflatex -shell-escape main.tex
+pdflatex -shell-escape main.tex
+open main.pdf
