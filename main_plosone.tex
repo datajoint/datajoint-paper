@@ -228,12 +228,22 @@ Andreas S.~Tolias\textsuperscript{1,2}
 \end{flushleft}
 % Please keep the abstract below 300 words
 \section*{Abstract}
-The rise of big data in modern research poses serious challenges for data management: Large and intricate datasets from diverse instrumentation must be precisely aligned, annotated, and processed in a variety of ways to extract new insights. 
-While high levels of data integrity are expected, research teams have diverse backgrounds, are geographically dispersed, and rarely possess a primary interest in data science. 
-Here we describe DataJoint, an open-source toolbox designed for manipulating and processing scientific data under the relational data model. 
-Designed for scientists who need a flexible and expressive database language with few basic concepts and operations, DataJoint facilitates multi-user access, efficient queries, and distributed computing. 
-With implementations in both MATLAB and Python, DataJoint is not limited to particular file formats, acquisition systems, or data modalities and can be quickly adapted to new experimental designs. 
-DataJoint and related resources are available at \url{http://datajoint.github.com}.
+The rise of big data in modern research poses serious challenges for
+data management: Large and intricate datasets from diverse
+instrumentation must be precisely aligned, annotated, and processed in
+a variety of ways to extract new insights.  While high levels of data
+integrity are expected, research teams have diverse backgrounds, are
+geographically dispersed, and rarely possess a primary interest in
+data science.  Here we describe DataJoint, an open-source toolbox
+designed for manipulating and processing scientific data under the
+relational data model.  Designed for scientists who need a flexible
+and expressive database language with few basic concepts and
+operations, DataJoint facilitates multi-user access, efficient
+queries, and distributed computing.  With implementations in both
+MATLAB and Python, DataJoint is not limited to particular file
+formats, acquisition systems, or data modalities and can be quickly
+adapted to new experimental designs.  DataJoint and related resources
+are available at \url{http://datajoint.github.com}.
 
 
 % Please keep the Author Summary between 150 and 200 words
@@ -275,7 +285,8 @@ Data can be concurrently accessed and manipulated by multiple users using either
 \subsection*{Defining data elements}
 
 \begin{figure*}
-\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment i
+\begin{tabular}{p{0.5\linewidth}p{0.5\linewidth}}
 {\sf \large A} & {\sf \large B}
 \\
 \vspace{0pt}\includegraphics{./figures/experiment.pdf} &
@@ -316,6 +327,7 @@ Example contents of \mintinline{python}{Session}.
 The vertical divider separates the primary key attributes `{\tt animal}' and `{\tt session}` from the dependent attributes.
 } 
 \label{schema}
+\end{adjustwidth}
 \end{figure*}
 
 Consider a particular real-world neuroscience study comprising a series of experiments that involve simultaneous \emph{in vivo} recordings of several types of physiological signals (whole-cell membrane potential or V\textsubscript{m}, local-field potentials or LFP, and calcium fluorescence signals), stimuli (visual display and optogenetic stimulation of targeted neuronal populations), and behaviors (locomotion, whisking, eye movements) \cite{reimer_pupil_2014}. 
@@ -326,9 +338,10 @@ Relations are DataJoint's basic data representation and can be thought of as sim
 The heading specifies attribute names and datatypes. 
 The body comprises a set of \emph{tuples} of attribute values. 
 Base relations are stored in the database whereas \emph{derived relations} may be constructed from base relations for data queries.
-For detailed definitions of the Relational Data Model, see Table \ref{glossary}.
+For detailed definitions of the Relational Data Model, see Figure \ref{glossary}.
 
-\begin{table*}
+\begin{figure*}
+\begin{adjustwidth}{-1.in}{0in} % Comment out/remove adjustwidth environment i
 \begin{boxedminipage}{\textwidth}
 \section*{Relational Data Model}
 \begin{description}
@@ -343,7 +356,7 @@ It consists of a \emph{heading} with attribute names and datatypes and a \emph{b
 
 We distinguish between \emph{base relations} and \emph{derived relations}.  
 A base relation has a dedicated class in MATLAB or Python and represents data stored directly in the database.
-Derived relations are formed from other relations by using relational operators (See Table \ref{algebra}).
+Derived relations are formed from other relations by using relational operators (See Figure \ref{algebra}).
 To create a new base relation, users create a new MATLAB or Python class subclassing from the DataJoint Relation class and define the relation's heading. 
 After that, users interact with the data by invoking these relation classes.
 
@@ -369,7 +382,8 @@ Fig.\ \ref{schema}\,B depicts the ERD for a particular neuroscience experiment.
 \end{boxedminipage}
 \caption{Key concepts of the relational data model as used in DataJoint.}
 \label{glossary}
-\end{table*}
+\end{adjustwidth}
+\end{figure*}
 
 A base relation is created in the form of a class in MATLAB or Python (Fig.\ \ref{schema}\,C) that defines the relation's heading.
 The heading definition comprises a description of the relation, dependencies on other base relations, and a set of \emph{attributes}. 
@@ -447,9 +461,10 @@ Examples of other types of relationships may be found in the online resources.
 \subsection*{Querying data}
 DataJoint provides a minimal yet powerful set of operators on relations: restriction, projection, and join.
 These operators allow transforming relations into new derived relations. 
-Table \ref{algebra} summarizes these operators.
-\begin{table*}
-\begin{boxedminipage}{\textwidth}
+Figure \ref{algebra} summarizes these operators.
+\begin{figure*}
+\begin{adjustwidth}{-2.25in}{0in}
+\begin{boxedminipage}{\linewidth}
 \section*{Relational algebra}
 
 Relational operators operate on existing relations to produce \emph{derived} relations for answering a wide variety of specific queries.
@@ -491,7 +506,8 @@ Please refer to the online documentation for more detailed descriptions.
 \end{boxedminipage}
 \caption{Relational operators of DataJoint}
 \label{algebra}
-\end{table*}
+\end{adjustwidth}
+\end{figure*}
 
 The output of each relational operator is a proper relation in its own right with its primary key, uniquely named attributes, and the full range of data query methods.
 This property, called \emph{algebraic closure}, allows expressings highly specific queries from existing queries intuitively and laconically.
@@ -565,15 +581,19 @@ Automated base relations are filled automatically from MATLAB or Python with the
 For example, Figures \ref{power-m} and \ref{power-py} list the complete implementation of the \matlab{Power} base relation, which computes the average power of the LFP signal for various frequency bands in our schema (Fig.\ \ref{schema}\,B).
 
 \begin{figure*}
+\begin{adjustwidth}{-2.25in}{0in}
 \inputminted[frame=single,linenos=true]{matlab}{Power.m}
 \caption{The class for the base relation \matlab{Power} in MATLAB.}
 \label{power-m}
+\end{adjustwidth}
 \end{figure*}
 
 \begin{figure*}
+\begin{adjustwidth}{-2.25in}{0in}
 \inputminted[frame=single,linenos=true]{python}{power.py}
 \caption{The class for the base relation \matlab{Power} in Python.}
 \label{power-py}
+\end{adjustwidth}
 \end{figure*}
 
 Execution of the following commands will fill \matlab{Power} for all available data.
@@ -658,7 +678,7 @@ This restriction simplifies data definition but, perhaps counter-intuitively, do
 
 \item
 DataJoint limits relational operators to enforce clarity.
-For example, the projection operator (see Table \ref{algebra} and online documentation) does not allow projecting out the primary key attributes.
+For example, the projection operator (see Figure \ref{algebra} and online documentation) does not allow projecting out the primary key attributes.
 Consequently, the resulting relation has the same number of tuples as the original relation and every tuple is unique.
 If the user does intend to derive a relation with a different primary key, she must explicitly declare a base relation with this primary key and use it to formulate the proper query.
 In practice, this is not a real limitation but a specific prescription of how data must be defined and manipulated in a uniform and explicit manner.
