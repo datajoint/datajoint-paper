@@ -230,27 +230,37 @@ Andreas S.~Tolias\textsuperscript{1,2}
 \section*{Abstract}
 The rise of big data in modern research poses serious challenges for
 data management: Large and intricate datasets from diverse
-instrumentation must be precisely aligned, annotated, and processed in
-a variety of ways to extract new insights.  While high levels of data
-integrity are expected, research teams have diverse backgrounds, are
-geographically dispersed, and rarely possess a primary interest in
-data science.  Here we describe DataJoint, an open-source toolbox
-designed for manipulating and processing scientific data under the
-relational data model.  Designed for scientists who need a flexible
-and expressive database language with few basic concepts and
-operations, DataJoint facilitates multi-user access, efficient
-queries, and distributed computing.  With implementations in both
-MATLAB and Python, DataJoint is not limited to particular file
-formats, acquisition systems, or data modalities and can be quickly
-adapted to new experimental designs.  DataJoint and related resources
-are available at \url{http://datajoint.github.com}.
+instrumentation must be precisely aligned, annotated, and organized in
+a flexible way that allows swift exploration and analysis. Data
+management should guarantee consistency of intermediate results in
+subsequent multi-step processing pipelines such that changes in one
+part automatically propagate to all downstream results. Finally, data
+organization should be self-documenting to ensure that lab members and
+collaborators can access the data with minimal effort, even years
+after it was collected. While high levels of data integrity are
+expected, research teams have diverse backgrounds, are geographically
+dispersed, and rarely possess a primary interest in data science.
+Here we describe DataJoint, an open-source toolbox designed for
+organizing and processing scientific data under the relational data
+model.  Designed for scientists who need a flexible and expressive
+database language with few basic concepts and operations, DataJoint
+facilitates multi-user access, efficient queries, and distributed
+computing.  With implementations in both MATLAB and Python, DataJoint
+is not limited to particular file formats, acquisition systems, or
+data modalities and can be quickly adapted to new experimental
+designs.  DataJoint and related resources are available at
+\url{http://datajoint.github.com}.
 
 
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLOS ONE authors please skip this step. 
 % Author Summary not valid for PLOS ONE submissions.   
-\section*{Author Summary}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+% \section*{Author Summary}
+% Data is the most valuable asset of a science lab: It is the substrate
+% from which we generate new insights and support previous claims. Data
+% from scientific experiments now often originate from diverse sources
+% which all come with a rich set of information about the setting under
+% which the data were recorded. 
 
 \linenumbers
 
@@ -281,7 +291,7 @@ At its back end, DataJoint is powered by the flexible and scalable open-source r
 However, DataJoint users do not need to learn SQL. They can manipulate data transparently through two of the most popular languages for scientific data analysis: Python and MATLAB.
 Data can be concurrently accessed and manipulated by multiple users using either language, or distributed across multiple computers for parallel processing.
 
-\section*{Materials and Methods}
+\section*{Results}
 \subsection*{Defining data elements}
 
 \begin{figure*}
