@@ -1,0 +1,46 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{csvsimple}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage[table,svgnames]{xcolor}
+\usepackage[english]{babel}
+\usepackage{minted}
+\usepackage{boxedminipage}
+\usepackage[margin=1.5cm, includefoot, footskip=30pt]{geometry}
+
+\newboolean{plosone} 
+\setboolean{plosone}{false} 
+
+
+\newcommand{\matlab}[1]{\mintinline{matlab}{#1}}
+\title{DataJoint: managing big scientific data using MATLAB or Python}
+\author{Dimitri Yatsenko, Jacob Reimer, Alexander S.~Ecker, Edgar Y.~Walker,\\ 
+Fabian Sinz, Philipp Berens, Andreas Hoenselaar, R.~James Cotton,\\ Athanassios G.~Siapas, Andreas S.~Tolias
+}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  \input{abstract.tex}
+\end{abstract}
+\input{intro.tex}
+
+\section*{Using DataJoint}
+\input{define.tex}
+\input{depend.tex}
+\input{query.tex}
+\input{compute.tex}
+\input{share.tex}
+
+\section*{Discussion}
+\input{discuss.tex}
+\input{resources.tex}
+
+\bibliographystyle{ieeetr}
+\bibliography{datajoint}
+\end{document}
