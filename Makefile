@@ -17,4 +17,4 @@ main.bbl:
 	bibtex main
 
 clean:
-	rm -rf *.log *.aux *.out *.out.pyg *.pyg *.bbl *.blg _minted-main_plosone/ *.pdf auto
+	rm -rf *.log *.aux *.out *.out.pyg *.pyg *.bbl *.blg _minted-main_plosone/ *.pdf auto _minted_main/
