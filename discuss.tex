@@ -1,7 +1,18 @@
+Data management among neuroscience research teams presents a variety of technical and sociocultural challenges \cite{smith_sharing_2015}.
+Several ongoing projects aim to address some of these challenges by proposing common file formats and application interfaces \cite{neuroshare, teeters_neurodata_2015} and offering hosting services for sharing of data and analysis with annotation, access control, and search capabilities \cite{smith_sharing_2015, herz_2008, crcns, carmen}.
+
+DataJoint offers an alternative and perhaps complementary approach to those proposed thus far.
+Without prescribing a specific format or data schema, DataJoint serves as a framework for creating schemas for complex data in a systematic manner using a streamlined and simplified version of the relational data model. 
+When using DataJoint as their data management framework, labs and teams configure one or several shared database servers and can view and access shared data directly from Python and MATLAB without the need for copying, opening, and parsing files.
+DataJoint's basic unit of data storage, a \emph{base relation}, takes the form of a Python or MATLAB class encapsulating the data definition and any accompanying analysis code. 
+Data can be flexibly shared with other teams or with computational clusters by granting access to the database servers or by replicating the data on other servers. 
+Getting away from file-based data management obviates concerns with file formats, file paths, and naming conventions; all data become immediately and flexibly accessible through the DataJoint classes in the host language.
+
 The relational data model has served as the theoretical foundation for the majority of mainstream  database systems for over forty years and has been shown to be the most cogent and principled approach for representing and manipulating data of arbitrary complexity \cite{date_sql_2011}.
 Yet, relational organization of data in science labs is still uncommon. 
-This disconnect is partly due to SQL's  position as the only wide-spread implementation of the relational model. 
-SQL and its dialects have deviated substantially from the simplicity of the relational data model and have overgrown with extraneous complexity.
+In our opinion, this disconnect arises from the deficiencies of SQL as the only common language to support the relational data model: 
+SQL deviates substantially from the rigor and simplicity of the relational data model and has overgrown with extraneous complexity.
+DataJoint distills the relational data model into just a few basic concepts, which can be quickly mastered by scientists who already have a solid understanding of Python or MATLAB.
 
 Object-relational mappers (ORM) are software tools that map objects in computer memory to persistent storage such as relational databases.
 Since DataJoint constructs objects with persistently stored data, it can be classified as an ORM.
